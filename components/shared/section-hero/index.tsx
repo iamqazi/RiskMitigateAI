@@ -15,7 +15,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({
   paragraph2,
 }) => {
   return (
-    <section className="relative max-w-[1181px] mx-auto flex flex-col items-center justify-center pt-[100px] md:mt-[50px] pb-8 bg-black text-white px-4">
+    <section className="relative  mx-auto flex flex-col items-center justify-center pt-[100px] md:mt-[50px] pb-8 bg-black text-white px-4">
       {/* Background Images */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
@@ -44,13 +44,13 @@ const FirstSection: React.FC<FirstSectionProps> = ({
             <span className="uppercase font-text">{buttonText}</span>
           </span>
         </button>
-        <h1 className="flex justify-center items-center text-[28px] sm:text-[32px] md:text-[46px] font-heading font-semibold mb-6 text-center sm:text-left px-4 sm:px-0">
+        <h1 className="flex justify-center items-center text-[28px] sm:text-[32px] md:text-[72px] font-heading font-semibold mb-6 text-center sm:text-left px-4 sm:px-0">
           {heading}
         </h1>
-        <p className="text-[20px] md:text-[16px] mx-auto max-w-[800px] font-text text-[#C5C6C5]">
+        <p className="text-[20px] md:text-[20px] mx-auto max-w-[800px] font-text text-[#C5C6C5]">
           {paragraph1}
         </p>
-        <p className="text-[20px] md:text-[16px] mx-auto max-w-[800px] font-text text-[#C5C6C5] mb-12">
+        <p className="text-[20px] md:text-[20px] mx-auto max-w-[800px] font-text text-[#C5C6C5] mb-12">
           {paragraph2}
         </p>
       </div>

@@ -1,14 +1,8 @@
-"use client";
 import AboutBoxes from "@/components/shared/boxes";
 import FirstSection from "@/components/shared/section-hero";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function About() {
-  const router = useRouter();
-  const handleButtonClick = () => {
-    router.push("/signup");
-  };
   return (
     <>
       {/* First Section */}{" "}
@@ -259,10 +253,12 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-[20px] md:text-[24px] text-white font-text font-semibold">
-                  Proactive Risk Management
+                  Seamless Integration
                 </h3>
                 <p className="text-[#C5C6C5] font-text text-[14px] md:text-[16px]">
-                  Stay ahead of market volatility with predictive AI tools.
+                  Effortlessly integrate RiskMitigateAI with your existing
+                  Solana-based lending platforms without disrupting your
+                  operations.
                 </p>
               </div>
             </div>
@@ -273,11 +269,11 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-[20px] md:text-[24px] text-white font-text font-semibold">
-                  Tailored for Solana
+                  Real-Time Insights
                 </h3>
                 <p className="text-[#C5C6C5] font-text text-[14px] md:text-[16px]">
-                  Purpose-built for the Solana blockchain, ensuring seamless
-                  compatibility and efficiency.
+                  Leverage AI-powered analytics to gain instant updates on
+                  borrower behavior, market trends, and collateral value.
                 </p>
               </div>
             </div>
@@ -288,40 +284,13 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-[20px] md:text-[24px] text-white font-text font-semibold">
-                  Trusted Solutions
+                  Enhanced Security
                 </h3>
                 <p className="text-[#C5C6C5] font-text text-[14px] md:text-[16px]">
-                  Designed to help users maximize safety and returns in
-                  decentralized lending.
+                  Safeguard your assets with cutting-edge encryption and robust
+                  data protection protocols tailored to the financial sector.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="max-w-[1181px]  mt-12  mx-auto pb-[60px] bg-black px-4 md:px-6">
-        <div className="bg-[#01F2A7] py-8 px-6 md:px-8 rounded-[24px] h-auto md:h-[370px] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
-          <div className="flex flex-col gap-y-[2rem] mx-auto leading-[2.3rem] px-4 md:px-6 text-center md:text-left">
-            <h1 className="text-[32px] font-heading  md:text-[48px] font-normal text-center text-black">
-              Join Us on Our Journey
-            </h1>{" "}
-            <p className="text-[#000] text-center max-w-[630px] font-text text-[14px] md:text-[16px]">
-              At RiskMitigateAI, we’re not just building tools—we’re shaping the
-              future of DeFi. Whether you’re a lender, borrower, or platform
-              operator, we’re here to help you navigate the world of
-              decentralized finance with confidence.
-            </p>
-            <h1 className="text-[32px] md:text-[32px] font-bold text-center text-black">
-              Ready to experience smarter risk management?
-            </h1>
-            <div className="flex flex-col md:flex-row justify-center items-center  gap-x-2 w-full">
-              <button
-                onClick={handleButtonClick}
-                type="button"
-                className="md:w-[40%] w-full uppercase hover:opacity-70 transition-all ease-in-out delay-100 py-2 px-10 bg-black text-white shadow-md rounded-[8px]  focus:ring-opacity-50 sm:w-auto"
-              >
-                Sign Up for Beta Access
-              </button>
             </div>
           </div>
         </div>
