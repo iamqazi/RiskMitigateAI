@@ -99,19 +99,19 @@ export default function Header() {
             className={`menu-item ${isActive("/about") ? "text-[#000]" : ""}`}
             href="/about"
           >
-            About
+            About Us
           </Link>
           <Link
             id="about"
             className={`menu-item ${isActive("/why-us") ? "text-[#000]" : ""}`}
-            href="/about"
+            href="/why-us"
           >
-            Why
+            Why Us
           </Link>
           <Link
             id="about"
             className={`menu-item ${isActive("/roadmap") ? "text-[#000]" : ""}`}
-            href="/about"
+            href="/roadmap"
           >
             Roadmap
           </Link>
