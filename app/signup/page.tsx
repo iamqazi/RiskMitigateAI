@@ -14,8 +14,7 @@ const SignUpForm = () => {
   });
 
   const [submittedMessage, setSubmittedMessage] = useState("");
-
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -23,7 +22,7 @@ const SignUpForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Clear form data and set submitted message
