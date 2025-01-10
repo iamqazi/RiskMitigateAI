@@ -135,6 +135,10 @@ export default function WhyUs() {
           </div>
         </section>
         <section className="py-10 max-w-[1181px] mx-auto px-4">
+          {" "}
+          <h2 className="text-[48px] text-white font-heading text-center mb-8">
+            Our Competitive Edge
+          </h2>
           {/* Table Container with custom scrollbar */}
           <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-100 scrollbar-rounded-lg">
             <table className="w-[1280px] rounded-[10px] border-collapse bg-gradient-to-b from-[#100F14] to-[#1A191D] text-white">
