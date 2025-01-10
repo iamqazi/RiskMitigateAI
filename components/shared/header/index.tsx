@@ -6,9 +6,6 @@ import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
   const [activeSection, setActiveSection] = useState("home");
 
   const router = useRouter();
@@ -19,14 +16,6 @@ export default function Header() {
 
   const handleButtonClickHome = () => {
     router.push("/");
-  };
-
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsNavOpen(false); // Close the mobile menu after clicking
-    }
   };
 
   useEffect(() => {
@@ -72,19 +61,21 @@ export default function Header() {
           <div className="hidden md:flex flex-grow justify-center">
             <ul className="flex space-x-8 text-white">
               <li>
-                <button
-                  onClick={() => scrollToSection("home")}
-                  className={`${
-                    activeSection === "home"
-                      ? "text-[#01F2A7]"
-                      : "hover:text-gray-300"
-                  }`}
-                >
-                  Home
-                </button>
+                <Link href="/">
+                  {" "}
+                  <button
+                    className={`${
+                      activeSection === "home"
+                        ? "text-[#01F2A7]"
+                        : "hover:text-gray-300"
+                    }`}
+                  >
+                    Home
+                  </button>
+                </Link>
               </li>
               <li>
-                <Link href="/pages/about">
+                <Link href="/about">
                   <button
                     className={`${
                       activeSection === "about"
@@ -97,28 +88,32 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("why-us")}
-                  className={`${
-                    activeSection === "why-us"
-                      ? "text-[#01F2A7]"
-                      : "hover:text-gray-300"
-                  }`}
-                >
-                  Why Us
-                </button>
+                <Link href="/why-us">
+                  {" "}
+                  <button
+                    className={`${
+                      activeSection === "why-us"
+                        ? "text-[#01F2A7]"
+                        : "hover:text-gray-300"
+                    }`}
+                  >
+                    Why Us
+                  </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("roadmap")}
-                  className={`${
-                    activeSection === "roadmap"
-                      ? "text-[#01F2A7]"
-                      : "hover:text-gray-300"
-                  }`}
-                >
-                  Roadmap
-                </button>
+                <Link href="/roadmap">
+                  {" "}
+                  <button
+                    className={`${
+                      activeSection === "roadmap"
+                        ? "text-[#01F2A7]"
+                        : "hover:text-gray-300"
+                    }`}
+                  >
+                    Roadmap
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
