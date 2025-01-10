@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/footer";
 import Header from "@/components/shared/header";
-import emailjs from "emailjs-com";
 import { useState } from "react";
 
 const SignUpForm = () => {
@@ -14,7 +13,9 @@ const SignUpForm = () => {
     city: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [submittedMessage, setSubmittedMessage] = useState("");
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -22,32 +23,24 @@ const SignUpForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send email using EmailJS
-    emailjs
-      .send(
-        "service_id", // Your EmailJS service ID
-        "template_id", // Your EmailJS template ID
-        formData, // Send the form data
-        "user_id" // Your EmailJS user ID
-      )
-      .then(
-        (response) => {
-          console.log("Success:", response.status, response.text);
-          alert("Form submitted successfully!");
-        },
-        (error) => {
-          console.error("Error:", error);
-          alert("There was an error submitting the form. Please try again.");
-        }
-      );
+    // Clear form data and set submitted message
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      country: "",
+      city: "",
+    });
+    setSubmittedMessage("Form submitted successfully!");
   };
 
   return (
     <>
-      <Header />{" "}
+      <Header />
       <div className="flex items-center justify-center min-h-screen bg-black">
         <div className="w-full max-w-[790px] p-6 rounded-lg shadow-lg">
           <h2 className="text-center text-white text-[42px] font-heading mb-6">
@@ -177,14 +170,17 @@ const SignUpForm = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full uppercase  py-2 px-8 bg-[#01F2A7] text-black rounded-md shadow-md hover:bg-[#01D68A] focus:outline-none focus:ring-2 focus:ring-[#01F2A7] focus:ring-opacity-50 sm:w-auto"
-                style={{
-                  height: "54px",
-                }}
+                className="w-full uppercase py-2 px-8 bg-[#01F2A7] text-black rounded-md shadow-md hover:bg-[#01D68A] focus:outline-none focus:ring-2 focus:ring-[#01F2A7] focus:ring-opacity-50 sm:w-auto"
+                style={{ height: "54px" }}
               >
                 Submit
               </button>
             </div>
+            {submittedMessage && (
+              <div className="mt-4 text-center text-green-500 text-lg">
+                {submittedMessage}
+              </div>
+            )}
           </form>
         </div>
       </div>

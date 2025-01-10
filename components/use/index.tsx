@@ -20,6 +20,7 @@ const cardData = [
   {
     step: "Step 3",
     title: "Take Action",
+    title2: "Follow AI-generated recommendations to manage risks",
     descriptions: [
       "Add collateral to secure your position.",
       "Adjust interest rates or close risky positions for stability.",
@@ -41,11 +42,15 @@ const Card: React.FC<{ data: (typeof cardData)[0] }> = ({ data }) => {
       <h2 className="text-white text-[16px] md:text-[20px] mt-[51px] font-text font-medium mb-2">
         {data.step}
       </h2>
+
       <h3 className="text-white text-center mt-[8px] text-[20px] md:text-[24px] font-text font-semibold mb-4">
         {data.title}
       </h3>
       <hr className="w-full border-[#29282D] mt-[34px] " />
       <div className="font-text text-[14px] mt-[26px] md:text-[16px] text-[#C5C6C5]">
+        <h2 className="text-white text-[16px] md:text-[20px] mt-[51px] font-text font-medium mb-2">
+          {data.title2}
+        </h2>
         {data.descriptions.map((desc, index) => (
           <p key={index} className="flex gap-2">
             <div className="w-[14px] h-[14px]">

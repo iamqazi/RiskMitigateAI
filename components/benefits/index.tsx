@@ -21,7 +21,7 @@ const Benefits: React.FC = () => {
             </span>
           </button>
 
-          <h2 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-heading font-normal text-white text-center sm:text-left sm:px-0">
+          <h2 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-heading font-normal text-white text-left sm:text-left sm:px-0">
             Why Choose RiskMitigateAI?
           </h2>
 
