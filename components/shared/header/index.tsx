@@ -1,49 +1,123 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleNav = () => {
     setIsNavOpen((prev) => !prev);
   };
+
   const router = useRouter();
+
   const handleButtonClick = () => {
     router.push("/signup");
   };
+
+  const handleButtonClickHome = () => {
+    router.push("/");
+  };
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsNavOpen(false); // Close the mobile menu after clicking
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "why-us", "roadmap"];
+      let active = "home";
+
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+            active = sectionId;
+          }
+        }
+      });
+
+      setActiveSection(active);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <header className="w-full bg-black border-b py-[18px] border-gray-900 sticky top-0 z-10">
         <div className="max-w-[1181px] h-[48px] mx-auto flex justify-between items-center p-4">
           {/* Logo on the left */}
           <div className="text-white text-xl font-bold">
-            <Image src={"/logo.png"} width={190} height={50} alt="logo" />
+            <Image
+              onClick={handleButtonClickHome}
+              src={"/logo.png"}
+              width={190}
+              height={50}
+              alt="logo"
+            />
           </div>
 
           {/* Navbar menu for medium and large screens */}
           <div className="hidden md:flex flex-grow justify-center">
             <ul className="flex space-x-8 text-white">
               <li>
-                <a href="#home" className="hover:text-gray-300">
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className={`${
+                    activeSection === "home"
+                      ? "text-[#01F2A7]"
+                      : "hover:text-gray-300"
+                  }`}
+                >
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="hover:text-gray-300">
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className={`${
+                    activeSection === "about"
+                      ? "text-[#01F2A7]"
+                      : "hover:text-gray-300"
+                  }`}
+                >
                   About Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#why-us" className="hover:text-gray-300">
+                <button
+                  onClick={() => scrollToSection("why-us")}
+                  className={`${
+                    activeSection === "why-us"
+                      ? "text-[#01F2A7]"
+                      : "hover:text-gray-300"
+                  }`}
+                >
                   Why Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#roadmap" className="hover:text-gray-300">
+                <button
+                  onClick={() => scrollToSection("roadmap")}
+                  className={`${
+                    activeSection === "roadmap"
+                      ? "text-[#01F2A7]"
+                      : "hover:text-gray-300"
+                  }`}
+                >
                   Roadmap
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -73,9 +147,7 @@ export default function Header() {
       <nav
         className={`${
           isNavOpen ? "block" : "hidden"
-        } md:hidden absolute top-0 right-0 w-[100%] z-10 flex flex-col justify-center items-center h-screen bg-[#01F2A7] p-4 transition-transform transform ${
-          isNavOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        } md:hidden absolute top-0 right-0 w-[100%] z-10 flex flex-col justify-center items-center h-screen bg-[#01F2A7] p-4 transition-transform transform`}
         style={{ transition: "transform 0.3s ease-in-out" }}
       >
         {/* Close button for mobile menu */}
@@ -90,24 +162,52 @@ export default function Header() {
         {/* Mobile menu items */}
         <ul className="flex flex-col text-black space-y-4">
           <li>
-            <a href="#home" className="hover:text-gray-300">
+            <button
+              onClick={() => scrollToSection("home")}
+              className={`${
+                activeSection === "home"
+                  ? "text-[#01F2A7]"
+                  : "hover:text-gray-300"
+              }`}
+            >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#about" className="hover:text-gray-300">
+            <button
+              onClick={() => scrollToSection("about")}
+              className={`${
+                activeSection === "about"
+                  ? "text-[#01F2A7]"
+                  : "hover:text-gray-300"
+              }`}
+            >
               About Us
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#why-us" className="hover:text-gray-300">
+            <button
+              onClick={() => scrollToSection("why-us")}
+              className={`${
+                activeSection === "why-us"
+                  ? "text-[#01F2A7]"
+                  : "hover:text-gray-300"
+              }`}
+            >
               Why Us
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#roadmap" className="hover:text-gray-300">
+            <button
+              onClick={() => scrollToSection("roadmap")}
+              className={`${
+                activeSection === "roadmap"
+                  ? "text-[#01F2A7]"
+                  : "hover:text-gray-300"
+              }`}
+            >
               Roadmap
-            </a>
+            </button>
           </li>
         </ul>
 

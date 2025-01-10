@@ -12,9 +12,27 @@ export default function LandingPage() {
     <>
       <section className="mx-auto">
         {" "}
-        <Header /> <HeroSection />
-        <AboutUs /> <Benefits />
-        <Roadmap /> <ResponsiveGrid /> <Banner />
+        <Header />{" "}
+        <section id="home">
+          <HeroSection />
+        </section>{" "}
+        <section id="about">
+          {" "}
+          <AboutUs />
+        </section>
+        <section id="why-us">
+          {" "}
+          <Benefits />
+        </section>
+        <section id="roadmap">
+          {" "}
+          <Roadmap />
+        </section>{" "}
+        <section>
+          {" "}
+          <ResponsiveGrid />
+        </section>{" "}
+        <Banner />
         <Footer />
       </section>
     </>

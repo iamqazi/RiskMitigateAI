@@ -177,12 +177,12 @@ const SignUpForm = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full uppercase sm:w-[307px] py-2 px-4 bg-[#01F2A7] text-black rounded-md shadow-md hover:bg-[#01D68A] focus:outline-none focus:ring-2 focus:ring-[#01F2A7] focus:ring-opacity-50 sm:w-auto"
+                className="w-full uppercase  py-2 px-8 bg-[#01F2A7] text-black rounded-md shadow-md hover:bg-[#01D68A] focus:outline-none focus:ring-2 focus:ring-[#01F2A7] focus:ring-opacity-50 sm:w-auto"
                 style={{
                   height: "54px",
                 }}
               >
-                Get Started <span className="inline-block ml-2">→</span>
+                Submit
               </button>
             </div>
           </form>
