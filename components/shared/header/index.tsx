@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -14,7 +16,7 @@ export default function Header() {
   const router = useRouter();
 
   const handleButtonClick = () => {
-    router.push("/signup");
+    window.open("/whitepaper.pdf", "_blank");
   };
 
   const handleButtonClickHome = () => {
@@ -58,7 +60,7 @@ export default function Header() {
       <header className="w-full bg-black border-b py-[18px] border-gray-900 sticky top-0 z-10">
         <div className="max-w-[1181px] h-[48px] mx-auto flex justify-between items-center p-4">
           {/* Logo on the left */}
-          <div className="text-white text-xl font-bold">
+          <Link href="/" className="text-white text-xl font-bold">
             <Image
               onClick={handleButtonClickHome}
               src={"/logo.png"}
@@ -66,7 +68,7 @@ export default function Header() {
               height={50}
               alt="logo"
             />
-          </div>
+          </Link>
 
           {/* Navbar menu for medium and large screens */}
           <div className="hidden md:flex flex-grow justify-center">
@@ -133,24 +135,41 @@ export default function Header() {
           </div>
 
           {/* Toggle Button for small and medium screens */}
-          <button
+          {/* <button
             className="text-white text-xl md:hidden"
             onClick={toggleNav}
             aria-label="Toggle navigation menu"
           >
             ☰
-          </button>
+          </button> */}
         </div>
       </header>
 
+      <div className="md:hidden block">
+        <Menu right>
+          <Link id="home" className="menu-item" href="/">
+            Home
+          </Link>
+          <Link id="about" className="menu-item" href="/about">
+            About
+          </Link>
+          <Link id="contact" className="menu-item" href="/contact">
+            Contact
+          </Link>
+          <Link className="menu-item--small" href="">
+            Settings
+          </Link>
+        </Menu>
+      </div>
+
       {/* Mobile Menu */}
-      <nav
+      {/* <nav
         className={`${
           isNavOpen ? "block" : "hidden"
         } md:hidden absolute top-0 right-0 w-[100%] z-10 flex flex-col justify-center items-center h-screen bg-[#01F2A7] p-4 transition-transform transform`}
         style={{ transition: "transform 0.3s ease-in-out" }}
       >
-        {/* Close button for mobile menu */}
+       
         <button
           onClick={toggleNav}
           className="absolute top-4 right-4 text-white text-2xl"
@@ -159,7 +178,7 @@ export default function Header() {
           ✖
         </button>
 
-        {/* Mobile menu items */}
+       
         <ul className="flex flex-col text-black space-y-4">
           <li>
             <button
@@ -211,14 +230,14 @@ export default function Header() {
           </li>
         </ul>
 
-        {/* Mobile button (White Paper) */}
+     
         <button
           onClick={handleButtonClick}
           className="mt-4 bg-[#ffff] text-[16px] text-black font-medium px-[48px] py-[10px] rounded-[8px]"
         >
           White Paper
         </button>
-      </nav>
+      </nav> */}
     </>
   );
 }

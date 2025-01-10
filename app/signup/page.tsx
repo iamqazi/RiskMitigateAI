@@ -2,6 +2,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/shared/header";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const SignUpForm = () => {
     city: "",
   });
 
-  const [submittedMessage, setSubmittedMessage] = useState("");
+  // const [submittedMessage, setSubmittedMessage] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -34,7 +35,11 @@ const SignUpForm = () => {
       country: "",
       city: "",
     });
-    setSubmittedMessage("Form submitted successfully!");
+    setTimeout(() => {
+      toast.success("You application has been submitted successfully");
+    }, 500);
+
+    // setSubmittedMessage("Form submitted successfully!");
   };
 
   return (
@@ -175,14 +180,15 @@ const SignUpForm = () => {
                 Submit
               </button>
             </div>
-            {submittedMessage && (
+            {/* {submittedMessage && (
               <div className="mt-4 text-center text-green-500 text-lg">
                 {submittedMessage}
               </div>
-            )}
+            )} */}
           </form>
         </div>
       </div>
+
       <Footer />
     </>
   );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -56,6 +57,38 @@ const Footer = () => {
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Roadmap
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col items-start">
+          <div className="h-12">
+            <h4 className="text-[20px] font-semibold mb-4"></h4>
+          </div>
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href="/signup"
+                className="text-[16px] font-text font-normal hover:underline"
+              >
+                Contact Us. 
+              </Link>
+            </li>
+            <li>
+              <a
+                href=""
+                className="text-[16px] font-text font-normal hover:underline"
+              >
+                Privacy Policy.
+              </a>
+            </li>
+            <li>
+              <a
+                href=""
+                className="text-[16px] font-text font-normal hover:underline"
+              >
+                Terms of Use
               </a>
             </li>
           </ul>

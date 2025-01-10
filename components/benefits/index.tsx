@@ -13,7 +13,7 @@ const Benefits: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-[60px]">
         {" "}
         {/* Right div with button, heading, and para */}
-        <div className="flex flex-col justify-center items-start gap-6">
+        <div className="flex flex-col justify-center items-start gap-6 z-10">
           <button className="w-[120px] sm:w-[134px] h-[36px] border px-2 border-[#464646] font-medium bg-gradient-to-b from-[#1F1F23] to-[#2E2D35] text-white rounded-[8px]">
             <span className="flex gap-2 items-center">
               <Image src={"/benefit.png"} height={28} width={28} alt="img" />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "RiskMitigateAI ",
@@ -16,7 +17,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/Favicon.png" type="image/x-icon" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

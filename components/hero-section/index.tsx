@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
             >
               Sign Up Now
             </button>
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <Image
                 src={"/Container2.png"}
                 width={119}
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
                 alt="logo"
               />
               <span className="text-[16px] font-text ml-3">+4.7K Users</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ const HeroSection: React.FC = () => {
             380+
           </span>
           <span className="text-white text-[18px] lg:text-[24px] font-text ml-3">
-            Active Users
+            Beta Users
           </span>
         </div>
         <div className="flex items-center">
