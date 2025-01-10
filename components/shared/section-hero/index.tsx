@@ -15,7 +15,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({
   paragraph2,
 }) => {
   return (
-    <section className="relative  mx-auto flex flex-col items-center justify-center pt-[100px] md:mt-[50px] pb-8 bg-black text-white px-4">
+    <section className="relative py-10 max-w-[1181px]  mx-auto flex flex-col items-center justify-center pt-[100px] md:mt-[50px] pb-8 bg-black text-white px-4">
       {/* Background Images */}
       <div className="absolute inset-0 overflow-hidden">
         <Image

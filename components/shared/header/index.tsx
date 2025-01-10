@@ -1,13 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState("home");
-
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -17,30 +14,6 @@ export default function Header() {
   const handleButtonClickHome = () => {
     router.push("/");
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "why-us", "roadmap"];
-      let active = "home";
-
-      sections.forEach((sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-            active = sectionId;
-          }
-        }
-      });
-
-      setActiveSection(active);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -63,56 +36,24 @@ export default function Header() {
               <li>
                 <Link href="/">
                   {" "}
-                  <button
-                    className={`${
-                      activeSection === "home"
-                        ? "text-[#01F2A7]"
-                        : "hover:text-gray-300"
-                    }`}
-                  >
-                    Home
-                  </button>
+                  <button>Home</button>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <button
-                    className={`${
-                      activeSection === "about"
-                        ? "text-[#01F2A7]"
-                        : "hover:text-gray-300"
-                    }`}
-                  >
-                    About Us
-                  </button>
+                  <button>About Us</button>
                 </Link>
               </li>
               <li>
                 <Link href="/why-us">
                   {" "}
-                  <button
-                    className={`${
-                      activeSection === "why-us"
-                        ? "text-[#01F2A7]"
-                        : "hover:text-gray-300"
-                    }`}
-                  >
-                    Why Us
-                  </button>
+                  <button>Why Us</button>
                 </Link>
               </li>
               <li>
                 <Link href="/roadmap">
                   {" "}
-                  <button
-                    className={`${
-                      activeSection === "roadmap"
-                        ? "text-[#01F2A7]"
-                        : "hover:text-gray-300"
-                    }`}
-                  >
-                    Roadmap
-                  </button>
+                  <button>Roadmap</button>
                 </Link>
               </li>
             </ul>

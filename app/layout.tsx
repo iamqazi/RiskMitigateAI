@@ -15,7 +15,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {" "}
       <head>
         <link rel="icon" href="/Favicon.png" type="image/x-icon" />
       </head>
