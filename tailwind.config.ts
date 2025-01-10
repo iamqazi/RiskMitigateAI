@@ -8,9 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        heading: ["Michroma", "sans-serif"],
+        text: ["Poppins", "sans-serif"],
       },
     },
   },

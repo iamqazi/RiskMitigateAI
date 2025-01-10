@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export", // Keep your static export configuration
+  images: {
+    unoptimized: true, // Disable image optimization
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
