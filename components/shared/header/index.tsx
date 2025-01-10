@@ -84,16 +84,17 @@ export default function Header() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className={`${
-                    activeSection === "about"
-                      ? "text-[#01F2A7]"
-                      : "hover:text-gray-300"
-                  }`}
-                >
-                  About Us
-                </button>
+                <Link href="/pages/about">
+                  <button
+                    className={`${
+                      activeSection === "about"
+                        ? "text-[#01F2A7]"
+                        : "hover:text-gray-300"
+                    }`}
+                  >
+                    About Us
+                  </button>
+                </Link>
               </li>
               <li>
                 <button

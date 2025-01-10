@@ -1,6 +1,4 @@
 "use client";
-import Footer from "@/components/footer";
-import Header from "@/components/shared/header";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -44,7 +42,6 @@ const SignUpForm = () => {
 
   return (
     <>
-      <Header />
       <div className="flex items-center justify-center min-h-screen bg-black">
         <div className="w-full max-w-[790px] p-6 rounded-lg shadow-lg">
           <h2 className="text-center text-white text-[42px] font-heading mb-6">
@@ -188,8 +185,6 @@ const SignUpForm = () => {
           </form>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };
