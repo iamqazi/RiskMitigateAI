@@ -6,12 +6,10 @@ import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
-  const toggleNav = () => {
-    setIsNavOpen((prev) => !prev);
-  };
+  const [activeSection, setActiveSection] = useState("home");
 
   const router = useRouter();
 
