@@ -1,19 +1,21 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const handleButtonClick = () => {
     window.open("/whitepaper.pdf", "_blank");
   };
 
   const handleButtonClickHome = () => {
-    router.push("/");
+    window.location.href = "/";
   };
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
@@ -35,25 +37,36 @@ export default function Header() {
             <ul className="flex space-x-8 text-white">
               <li>
                 <Link href="/">
-                  {" "}
-                  <button>Home</button>
+                  <button className={isActive("/") ? "text-[#01F2A7]" : ""}>
+                    Home
+                  </button>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <button>About Us</button>
+                  <button
+                    className={isActive("/about") ? "text-[#01F2A7]" : ""}
+                  >
+                    About Us
+                  </button>
                 </Link>
               </li>
               <li>
                 <Link href="/why-us">
-                  {" "}
-                  <button>Why Us</button>
+                  <button
+                    className={isActive("/why-us") ? "text-[#01F2A7]" : ""}
+                  >
+                    Why Us
+                  </button>
                 </Link>
               </li>
               <li>
                 <Link href="/roadmap">
-                  {" "}
-                  <button>Roadmap</button>
+                  <button
+                    className={isActive("/roadmap") ? "text-[#01F2A7]" : ""}
+                  >
+                    Roadmap
+                  </button>
                 </Link>
               </li>
             </ul>
@@ -68,24 +81,26 @@ export default function Header() {
               White Paper
             </button>
           </div>
-
-          {/* Toggle Button for small and medium screens */}
-          {/* <button
-            className="text-white text-xl md:hidden"
-            onClick={toggleNav}
-            aria-label="Toggle navigation menu"
-          >
-            ☰
-          </button> */}
         </div>
       </header>
 
+      {/* Mobile Menu */}
       <div className="md:hidden block">
         <Menu right>
-          <Link id="home" className="menu-item" href="/">
+          <Link
+            id="home"
+            className={`menu-item ${isActive("/") ? "text-[#01F2A7]" : ""}`}
+            href="/"
+          >
             Home
           </Link>
-          <Link id="about" className="menu-item" href="/about">
+          <Link
+            id="about"
+            className={`menu-item ${
+              isActive("/about") ? "text-[#01F2A7]" : ""
+            }`}
+            href="/about"
+          >
             About
           </Link>
           <Link id="contact" className="menu-item" href="/contact">
@@ -96,83 +111,6 @@ export default function Header() {
           </Link>
         </Menu>
       </div>
-
-      {/* Mobile Menu */}
-      {/* <nav
-        className={`${
-          isNavOpen ? "block" : "hidden"
-        } md:hidden absolute top-0 right-0 w-[100%] z-10 flex flex-col justify-center items-center h-screen bg-[#01F2A7] p-4 transition-transform transform`}
-        style={{ transition: "transform 0.3s ease-in-out" }}
-      >
-       
-        <button
-          onClick={toggleNav}
-          className="absolute top-4 right-4 text-white text-2xl"
-          aria-label="Close navigation menu"
-        >
-          ✖
-        </button>
-
-       
-        <ul className="flex flex-col text-black space-y-4">
-          <li>
-            <button
-              onClick={() => scrollToSection("home")}
-              className={`${
-                activeSection === "home"
-                  ? "text-[#01F2A7]"
-                  : "hover:text-gray-300"
-              }`}
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("about")}
-              className={`${
-                activeSection === "about"
-                  ? "text-[#01F2A7]"
-                  : "hover:text-gray-300"
-              }`}
-            >
-              About Us
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("why-us")}
-              className={`${
-                activeSection === "why-us"
-                  ? "text-[#01F2A7]"
-                  : "hover:text-gray-300"
-              }`}
-            >
-              Why Us
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("roadmap")}
-              className={`${
-                activeSection === "roadmap"
-                  ? "text-[#01F2A7]"
-                  : "hover:text-gray-300"
-              }`}
-            >
-              Roadmap
-            </button>
-          </li>
-        </ul>
-
-     
-        <button
-          onClick={handleButtonClick}
-          className="mt-4 bg-[#ffff] text-[16px] text-black font-medium px-[48px] py-[10px] rounded-[8px]"
-        >
-          White Paper
-        </button>
-      </nav> */}
     </>
   );
 }
