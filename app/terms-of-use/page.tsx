@@ -137,7 +137,9 @@ const TermsOfUse: React.FC = () => {
                 ))}
               </ul>
             ) : (
-              <p>{term.content}</p>
+              <p className="text-[#C5C6C5] text-[16px] font-text">
+                {term.content}
+              </p>
             )}
           </div>
         ))}

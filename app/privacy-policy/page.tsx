@@ -134,7 +134,9 @@ const PrivacyPolicy: React.FC = () => {
                 ))}
               </ul>
             ) : (
-              <p>{policy.content}</p>
+              <p className="text-[#C5C6C5] text-[16px] font-text">
+                {policy.content}
+              </p>
             )}
           </div>
         ))}
