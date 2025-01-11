@@ -1,14 +1,18 @@
 // components/HeroSection.tsx
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import React from "react";
 
 const HeroSection: React.FC = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const handleButtonClick = () => {
-    router.push("/signup");
+    const signupSection = document.getElementById("signup");
+    if (signupSection) {
+      signupSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
   return (
     <section className="relative">
       {/* Left side: Image (Hidden for sm and md, visible for lg and above) */}
@@ -62,7 +66,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="max-w-[1181px] gap-[40px] lg:gap-[62px] flex flex-col lg:flex-row mx-auto items-center justify-center lg:justify-between px-6 lg:px-0">
+      {/* <div className="max-w-[1181px] gap-[40px] lg:gap-[62px] flex flex-col lg:flex-row mx-auto items-center justify-center lg:justify-between px-6 lg:px-0">
         <div className="flex items-center">
           <span className="text-[#01F2A7] text-[36px] lg:text-[48px] font-text font-semibold">
             380+
@@ -87,7 +91,7 @@ const HeroSection: React.FC = () => {
             Protected Data
           </span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

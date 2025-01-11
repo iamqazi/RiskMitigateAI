@@ -29,7 +29,9 @@ export default function LandingPage() {
           {" "}
           <ResponsiveGrid />
         </section>{" "}
-        <Banner />
+        <section id="signup">
+          <Banner />
+        </section>
       </section>
     </>
   );
