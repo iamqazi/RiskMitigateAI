@@ -28,36 +28,36 @@ const Footer = () => {
           <h4 className="text-[20px] font-semibold mb-4">Company</h4>
           <ul className="space-y-2">
             <li>
-              <a
-                href="#home"
+              <Link
+                href="/"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#about"
+              <Link
+                href="/about"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#why-us"
+              <Link
+                href="/why-us"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Why Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#roadmap"
+              <Link
+                href="/roadmap"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Roadmap
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -69,7 +69,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
-                href="/signup"
+                href="/"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Contact Us. 
@@ -98,7 +98,7 @@ const Footer = () => {
         <div className="flex flex-col items-start">
           <h4 className="text-lg font-semibold mb-4">Social Media</h4>
           <div className="flex flex-col justify-start items-center gap-2">
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="w-[40px] relative h-[40px]  border border-[#29282D] rounded-full ">
                 <Image
                   src={"/telegram.png"}
@@ -111,8 +111,8 @@ const Footer = () => {
               <span className="text-[#C6C7C6] text-[16px] ">
                 @RiskMitigateAI
               </span>{" "}
-            </div>
-            <div className="flex items-center gap-2">
+            </div> */}
+            {/* <div className="flex items-center gap-2">
               <span className="w-[40px] relative h-[40px]  border border-[#29282D] rounded-full ">
                 <Image
                   src={"/facebook.png"}
@@ -125,7 +125,7 @@ const Footer = () => {
               <span className="text-[#C6C7C6] text-[16px] ">
                 @RiskMitigateAI
               </span>{" "}
-            </div>
+            </div> */}
             <div className="flex items-center gap-2">
               <span className="w-[40px] relative h-[40px]  border border-[#29282D] rounded-full ">
                 <Image
