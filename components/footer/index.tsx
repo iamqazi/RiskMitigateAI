@@ -28,36 +28,36 @@ const Footer = () => {
           <h4 className="text-[20px] font-semibold mb-4">Company</h4>
           <ul className="space-y-2">
             <li>
-              <a
-                href="#home"
+              <Link
+                href="/"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#about"
+              <Link
+                href="/about"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#why-us"
+              <Link
+                href="/why-us"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Why Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#roadmap"
+              <Link
+                href="/roadmap"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Roadmap
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -72,24 +72,24 @@ const Footer = () => {
                 href="/signup"
                 className="text-[16px] font-text font-normal hover:underline"
               >
-                Contact Us. 
+                Contact Us
               </Link>
             </li>
             <li>
-              <a
-                href=""
+              <Link
+                href="/privacy-policy"
                 className="text-[16px] font-text font-normal hover:underline"
               >
-                Privacy Policy.
-              </a>
+                Privacy Policy
+              </Link>
             </li>
             <li>
-              <a
-                href=""
+              <Link
+                href="/terms-of-use"
                 className="text-[16px] font-text font-normal hover:underline"
               >
                 Terms of Use
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
