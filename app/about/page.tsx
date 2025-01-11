@@ -2,13 +2,8 @@
 import AboutBoxes from "@/components/shared/boxes";
 import FirstSection from "@/components/shared/section-hero";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function About() {
-  const router = useRouter();
-  const handleButtonClick = () => {
-    router.push("/signup");
-  };
   return (
     <>
       {/* First Section */}{" "}
@@ -247,9 +242,6 @@ export default function About() {
               Discover the key benefits that set us apart in delivering smarter
               risk management solutions for lending platforms.
             </p>
-            <button className="px-4 sm:px-6 py-2 sm:py-3 text-[14px] sm:text-[16px] w-[140px] sm:w-[152px] h-[40px] sm:h-[45px] bg-[#01F2A7] text-black rounded-[8px] font-semibold">
-              Get Started
-            </button>
           </div>
           {/* Left div with three sub-divs */}
           <div className="flex flex-col gap-6 md:gap-8 order-2 lg:order-1">
@@ -316,15 +308,6 @@ export default function About() {
             <h1 className="text-[32px] md:text-[48px] font-bold text-center text-black">
               Early Access Program!
             </h1>
-            <div className="flex flex-col md:flex-row justify-center items-center  gap-x-2 w-full">
-              <button
-                onClick={handleButtonClick}
-                type="button"
-                className="md:w-[40%] w-full uppercase hover:opacity-70 transition-all ease-in-out delay-100 py-2 px-10 bg-black text-white shadow-md rounded-[8px]  focus:ring-opacity-50 sm:w-auto"
-              >
-                Sign Up for Beta Access
-              </button>
-            </div>
           </div>
         </div>
       </section>

@@ -50,48 +50,11 @@ const HeroSection: React.FC = () => {
               onClick={handleButtonClick}
               className="px-6 py-3 font-medium w-[185px] bg-white text-black rounded-[8px]"
             >
-              Sign Up Now
+              Learn more
             </button>
-            {/* <div className="flex items-center">
-              <Image
-                src={"/Container2.png"}
-                width={119}
-                height={48}
-                alt="logo"
-              />
-              <span className="text-[16px] font-text ml-3">+4.7K Users</span>
-            </div> */}
           </div>
         </div>
       </div>
-
-      {/* Stats Section */}
-      {/* <div className="max-w-[1181px] gap-[40px] lg:gap-[62px] flex flex-col lg:flex-row mx-auto items-center justify-center lg:justify-between px-6 lg:px-0">
-        <div className="flex items-center">
-          <span className="text-[#01F2A7] text-[36px] lg:text-[48px] font-text font-semibold">
-            380+
-          </span>
-          <span className="text-white text-[18px] lg:text-[24px] font-text ml-3">
-            Beta Users
-          </span>
-        </div>
-        <div className="flex items-center">
-          <span className="text-[#01F2A7] text-[36px] lg:text-[48px] font-text font-semibold">
-            230+
-          </span>
-          <span className="text-white text-[18px] lg:text-[24px] font-text ml-3">
-            Trusted by Company
-          </span>
-        </div>
-        <div className="flex items-center">
-          <span className="text-[#01F2A7] text-[36px] lg:text-[48px] font-text font-semibold">
-            $230M+
-          </span>
-          <span className="text-white text-[18px] lg:text-[24px] font-text ml-3">
-            Protected Data
-          </span>
-        </div>
-      </div> */}
     </section>
   );
 };

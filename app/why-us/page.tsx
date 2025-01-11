@@ -1,13 +1,8 @@
 "use client";
 import FirstSection from "@/components/shared/section-hero";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function WhyUs() {
-  const router = useRouter();
-  const handleButtonClick = () => {
-    router.push("/signup");
-  };
   return (
     <>
       {/* First Section */}{" "}
@@ -241,15 +236,6 @@ export default function WhyUs() {
               <h1 className="text-[32px] font-heading leading-[70px]  md:text-[48px] font-normal text-center text-black">
                 Ready to join the future of risk management?
               </h1>{" "}
-              <div className="flex flex-col md:flex-row justify-center items-center  gap-x-2 w-full">
-                <button
-                  onClick={handleButtonClick}
-                  type="button"
-                  className="md:w-[40%] w-full uppercase hover:opacity-70 transition-all ease-in-out delay-100 py-2 px-10 bg-black text-white shadow-md rounded-[8px]  focus:ring-opacity-50 sm:w-auto"
-                >
-                  Sign Up for Beta Access
-                </button>
-              </div>
             </div>
           </div>
         </section>
