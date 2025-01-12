@@ -6,9 +6,13 @@ import { slide as Menu } from "react-burger-menu";
 
 export default function Header() {
   const pathname = usePathname();
-
-  const handleButtonClick = () => {
-    window.open("/whitepaper.pdf", "_blank");
+  const documentUrl =
+    "https://docs.google.com/document/d/1yRy_y1yqMba74uwvqMhZRiZHk-76bCgp/edit";
+  // const handleButtonClick = () => {
+  //   window.open("/whitepaper.pdf", "_blank");
+  // };
+  const handleClick = () => {
+    window.open(documentUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleButtonClickHome = () => {
@@ -75,7 +79,7 @@ export default function Header() {
           {/* Signup button on the right for medium and large screens */}
           <div className="hidden md:block">
             <button
-              onClick={handleButtonClick}
+              onClick={handleClick}
               className="bg-[#01F2A7] z-10 text-[16px] text-black font-medium px-[48px] py-[10px] rounded-[8px]"
             >
               White Paper
